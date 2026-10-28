@@ -1,0 +1,63 @@
+
+:root {
+    --ink: #11151b;
+    --paper: #f7f3ea;
+    --sand: #ece4d3;
+    --gold: #b88f45;
+    --gold-lt: #d9bc82;
+    --text: #26231e;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --w: 1120px;
+    
+}
+
+* { box-sizing:border-box; margin: 0; 
+}
+body {
+  font: 17px/1.7 var(--sans);
+  color: var(--text);
+  background: var(--paper);
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+a {
+  color: inherit;
+}
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+}
+h1 {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+}
+h2 {
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+}
+.wrap {
+  width: min(100% - 2.5rem, var(--w));
+  margin-inline: auto;
+}
+.eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+section {
+  padding: clamp(3.5rem, 8vw, 6.5rem) 0;
+}
+.skip-link {
+  position:absolute;
+  left: -999px;  
+}
+.skip-link:focus {
+    left: 1rem;
+}
