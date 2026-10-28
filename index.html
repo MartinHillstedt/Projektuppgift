@@ -10,22 +10,26 @@
 <body>
 <a class="skip-link" href="#main">Hoppa till innehållet</a>
 
-<header>
-<a href="index.html"><img src="images/logo-guldsmederna.png" alt="Guldsmedernalogo, till startsidan."></a>
-<nav aria-label="Huvudmeny">
+
+<header class="site-header">
+<div class="wrap">    
+<a class="logo" href="index.html"><img src="images/logo-guldsmederna.png" alt="Guldsmedernalogo, till startsidan."></a>
+<nav class="mainnav" id="huvudmeny" aria-label="Huvudmeny">
 <ul class="mainnav">
+
 <li><a href="index.html" aria-current="page">Startsidan</a></li>
 <li><a href="tjanster.html">Tjänster</a></li>
 <li><a href="galleri.html">Galleri</a></li>    
 <li><a href="kontakt.html">Kontakta Oss</a></li>
 </ul>
 </nav>
+</div>
 </header>
 <main id="main">
 <section class="hero">
     <img src="images/hero.jpg" alt="Guldsmed som arbetar med en oinfattad ring vid sitt bräde">
-    <div>
-        <p>Guldsmedsmästare . Gottne</p>
+    <div class="wrap">
+        <span class="eyebrow">Guldsmedsmästare . Gottne</span>
         <h1>Smycken skapade för hand - i över 50 år.</h1>
         <p>Ateljétillverkade förlovnings- och vigselringar samt juvelsmycken, formgivna tillsammans med dig av guldsmedsmästare Lars-Börje Nilsson.</p>
         <div class="btns">
@@ -36,7 +40,7 @@
     </section>
 <div class="facts">
 <ul class="factswrap">
-    <li><b>Sedan 1974</b><span>Verkstadateljé i Örnsköldsvik</span></li>
+    <li><b>Sedan 1974</b><span>Verkstadsateljé i Örnsköldsvik</span></li>
     <li><b>Över 50 år</b><span>i guldsmedsyrket</span></li>
     <li><b>Mästarbrev</b><span>yrkets högsta kvalitetsbevis</span></li>    
 </ul>
@@ -57,8 +61,10 @@
 </div>
 </section>
 
-<section class="bg-dark" id="hantverket"></section>
+<section class="bg-dark" id="hantverket">
 <div class="wrap">
+    <div class="split rev">
+
     <figure class="frame">
     <img src="images/skiss-brosch.jpg" alt="Handritad skiss av guldbrosch med diamanter bredvid den färdiga broschen utan infattade stenar"/>
     </figure>
@@ -77,12 +83,11 @@
 
 <section class="bg-sand" id="yrkesskicklighet">
     <div class="wrap split">
-    <div>
     <span class="eyebrow">Yrkesskicklighet</span>
     <h2>Gesällbrev och Mästarbrev</h2>
     <p>Mästarbrevet är det högsta beviset på yrkesskicklighet inom ett hantverksyrke. Det garanterar stort yrkeskunnande och erfarenhet,
     men också pålitlighet som hantverksföretagare.</p>
-    <p>Gesällbrevet är hantverkarnas egen kvalitetsgaranti och visar attyrkeskunskaperna är godkända av branschen.</p>
+    <p>Gesällbrevet är hantverkarnas egen kvalitetsgaranti och visar att yrkeskunskaperna är godkända av branschen.</p>
     </div>
     <figure class="frame">
     <img src="images/intyg.jpg" alt="Inramade Gesällbrev, Mästarförklaring och Mästarbrev"/>
@@ -153,7 +158,7 @@
     </div>
     <div class="legal-bar">
     <div class="legal-wrap">
-    <img src="images/mastare-liggande-farg-transparent.png" alt="Mästare-logo" class="legal-logo">/>
+    <img src="images/mastare-liggande-farg-transparent.png" alt="Officiell logo från hantverksrådet som intygar att utövaren är mästare" class="legal-logo">/>
     <img src="images/logo-guldsmederna-transparent.png" alt="" class="legal-logo"/>
     <p class="legal">© 2026 Guldsmederna</p>
     </div>
