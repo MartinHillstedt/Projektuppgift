@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kontakta oss – Guldsmederna</title>
+    <meta
+      name="description"
+      content="Kontakta Guldsmederna i Gottne. Gottne 105, 895 95 Mellansel. Telefon 0660-175 30."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Hoppa till innehållet</a>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="logo" href="index.html"
+          ><img
+            src="images/logo-guldsmederna.png"
+            alt="Guldsmederna, till startsidan" /></a
+        ><button
+          class="menu-btn"
+          id="menu-btn"
+          type="button"
+          aria-expanded="false"
+          aria-controls="huvudmeny"
+        >
+          Meny
+        </button>
+        <nav class="mainnav" id="huvudmeny" aria-label="Huvudmeny">
+          <ul class="nav">
+            <li><a href="index.html">Start</a></li>
+            <li><a href="tjanster.html">Tjänster</a></li>
+            <li><a href="galleri.html">Galleri</a></li>
+            <li><a href="kontakt.html" aria-current="page">Kontakta oss</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="pagehead">
+        <div class="wrap">
+          <span class="eyebrow" style="color: var(--gold-lt)">Kontakt</span>
+          <h1>Välkommen till ateljén</h1>
+          <p>Verkstadsateljén ligger ca 2,5 mil från Örnsköldsvik, i Gottne.</p>
+        </div>
+      </section>
+      <section>
+        <div class="wrap contact">
+          <div>
+            <span class="eyebrow">Guldsmederna</span>
+            <h2>Hitta hit</h2>
+            <p>Gottne 105<br />895 95 Mellansel</p>
+            <p>
+              <a href="tel:+4666017530">0660-175 30</a><br /><a
+                href="tel:+46703817530"
+                >070-38 175 30</a
+              ><br /><a href="mailto:lars-borje@gnj.se">lars-borje@gnj.se</a>
+            </p>
+            <p>
+              Ring oss gärna innan eventuellt besök. Vi skickar även mot
+              postförskott. Glöm inte att ange din postadress om du mejlar en
+              beställning.
+            </p>
+            <a
+              class="btn"
+              href="https://www.google.se/maps/place/Gottne+105,+895+95+Mellansel/@63.4292141,18.4234034,17z"
+              rel="noopener"
+              >Visa på karta</a
+            >
+            <figure class="frame">
+              <img
+                src="images/skylt-hangande.jpg"
+                alt="Guldsmedernas skylt i smidesjärn"/>
+            </figure>
+          </div>
+          <div>
+            <span class="eyebrow">Förfrågan</span>
+            <h2>Skicka ett meddelande</h2>
+            <p>
+              Berätta om din idé eller ditt ärende, så återkommer vi. Fält med *
+              måste fyllas i.
+            </p>
+            <br />
+            <form id="kontaktformular" novalidate>
+              <p class="form-status" id="formular-status" role="status"></p>
+              <div class="field">
+                <label for="namn">Namn *</label
+                ><input
+                  type="text"
+                  id="namn"
+                  name="namn"
+                  autocomplete="name"
+                  aria-describedby="namn-fel"
+                /><span class="fel" id="namn-fel"></span>
+              </div>
+              <div class="field">
+                <label for="epost">E-post *</label
+                ><input
+                  type="email"
+                  id="epost"
+                  name="epost"
+                  autocomplete="email"
+                  aria-describedby="epost-fel"
+                /><span class="fel" id="epost-fel"></span>
+              </div>
+              <div class="field">
+                <label for="telefon">Telefon (valfritt)</label
+                ><input
+                  type="tel"
+                  id="telefon"
+                  name="telefon"
+                  autocomplete="tel"
+                  aria-describedby="telefon-fel"
+                /><span class="fel" id="telefon-fel"></span>
+              </div>
+              <div class="field">
+                <label for="arende">Vad gäller din förfrågan? *</label
+                ><select
+                  id="arende"
+                  name="arende"
+                  aria-describedby="arende-fel"
+                >
+                  <option value="">Välj…</option>
+                  <option>Nytillverkning (ring eller smycke)</option>
+                  <option>Omarbetning av gammalt smycke</option>
+                  <option>Reparation eller renovering</option>
+                  <option>Värdering</option>
+                  <option>Hembesök</option>
+                  <option>Annat</option></select
+                ><span class="fel" id="arende-fel"></span>
+              </div>
+              <div class="field">
+                <label for="meddelande"
+                  >Berätta om din idé eller ditt ärende *</label
+                ><textarea
+                  id="meddelande"
+                  name="meddelande"
+                  aria-describedby="meddelande-fel"
+                ></textarea
+                ><span class="fel" id="meddelande-fel"></span>
+              </div>
+              <button class="btn" type="submit">Skicka förfrågan</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap">
+        <div>
+          <h3>Guldsmederna</h3>
+          <p>Guldsmedsmästare Lars-Börje Nilsson<br />Ateljé i Gottne</p>
+        </div>
+        <div>
+          <h3>Kontakt</h3>
+          <ul>
+            <li>Gottne 105, 895 95 Mellansel</li>
+            <li><a href="tel:+4666017530">0660-175 30</a></li>
+            <li><a href="tel:+46703817530">070-38 175 30</a></li>
+            <li><a href="mailto:lars-borje@gnj.se">lars-borje@gnj.se</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Sidor</h3>
+          <ul>
+            <li><a href="index.html">Start</a></li>
+            <li><a href="tjanster.html">Tjänster</a></li>
+            <li><a href="galleri.html">Galleri</a></li>
+            <li><a href="kontakt.html">Kontakta oss</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="legal-bar">
+        <div class="legal-wrap">
+          <img
+            src="images/logo-guldsmederna-transparent.png"
+            alt="Guldsmederna Logo"
+            class="legal-logo"
+          />
+          <p class="legal">© 2026 Guldsmederna</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
