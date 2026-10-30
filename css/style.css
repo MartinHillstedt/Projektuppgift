@@ -63,10 +63,9 @@ section {
   left: 1rem;
   top: 1rem;
   background: #fff;
-  color:#000;
+  color: #000;
   padding: 0.5rem 1rem;
   z-index: 20;
-
 }
 .btns {
   display: flex;
@@ -343,10 +342,11 @@ section {
   gap: 0.8rem;
   grid-template-columns: repeat(2, 1fr);
 }
-@media (min-width:760px) {
-.grid {
-  grid-template-columns: repeat(3, 1fr);}  
-}  
+@media (min-width: 760px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 .grid img {
   width: 100%;
   aspect-ratio: 4/3;
@@ -397,8 +397,7 @@ footer a:hover {
   color: var(--gold);
   font-weight: 500;
   width: 100%;
-  border-top: 1px solid var(--gold)
- 
+  border-top: 1px solid var(--gold);
 }
 .legal-wrap {
   display: flex;
@@ -542,7 +541,6 @@ footer a:hover {
   margin-top: 0.4rem;
   color: #6b645a;
 }
-
 .flt {
   display: flex;
   flex-wrap: wrap;
@@ -568,4 +566,68 @@ footer a:hover {
   display: none;
 }
 
+/*TJÄNSTER*/
+
+.contact {
+  display: grid;
+  gap: 2.5rem;
+}
+@media (min-width: 860px) {
+  .contact {
+    grid-template-columns: 1fr 1.1fr;
+    gap: 4rem;
+  }
+}
+.contact p + p {
+  margin-top: 1rem;
+}
+.contact .frame {
+  margin-top: 1.5rem;
+}
+.field {
+  margin-bottom: 1.2rem;
+}
+.field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid #b9b3a6;
+  background: #fff;
+  font: inherit;
+  color: var(--text);
+}
+.field textarea {
+  min-height: 9rem;
+  resize: vertical;
+}
+.field [aria-invalid="true"] {
+  border-color: #a32020;
+}
+.fel {
+  display: block;
+  color: #a32020;
+  font-size: 0.9rem;
+  min-height: 1.2em;
+  margin-top: 0.25rem;
+}
+.form-status {
+  padding: 1rem;
+  border: 1px solid var(--gold);
+  background: var(--sand);
+  margin-bottom: 1.2rem;
+}
+.form-status:empty {
+  display: none;
+}
+form .btn {
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
 
