@@ -68,5 +68,25 @@ function formatPrice(pricePerKg) {
     }) + " kr/g"
   );
 }
+/**
+ * Skriver ut kurserna och tidpunkten i sidfoten.
+ * @param {Object} data - Svaret från API:t
+ */
+function showRates(data) {
+  goldElement.textContent = formatPrice(latestRate(data.rates, "lbma_gold"));
+  silverElement.textContent = formatPrice(data.rates.lbma_silver);
+  palladiumElement.textContent = formatPrice(latestRate(data.rates, "lbma_palladium"));
+  platinumElement.textContent = formatPrice(latestRate(data.rates, "lbma_platinum"));
+
+  const updated = new Date(data.timestamp);
+  statusElement.textContent =
+    "Uppdaterad " +
+    updated.toLocaleString("sv-SE", {
+      day: "numeric",
+      month: "short",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+}
 
 
