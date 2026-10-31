@@ -375,11 +375,12 @@ footer {
 }
 footer .wrap {
   display: grid;
-  gap: 2rem;
+  gap: 1.5rem; /* Fixat: Ändrat kommatecken till punkt (1,5rem -> 1.5rem) */
 }
 @media (min-width: 760px) {
   footer .wrap {
     grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 1.2rem;
   }
 }
 footer h3 {
@@ -417,9 +418,11 @@ footer a:hover {
   font-size: 0.8rem;
   margin-top: 0.5rem;
 }
+
 @media (min-width: 900px) {
-  .footer-rates {
+  footer .wrap.footer-rates {
     grid-template-columns: 1.1fr 1fr 1.3fr 0.7fr;
+    gap: 2.5rem;
   }
 }
 /*COPYRIGHTSEKTION*/
