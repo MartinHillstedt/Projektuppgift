@@ -9,11 +9,11 @@
       content="Kontakta Guldsmederna i Gottne. Gottne 105, 895 95 Mellansel. Telefon 0660-175 30."
     />
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/menu.js"></script>
-    <script src="js/kontakt.js"></script>
+    <script src="js/menu.js" defer></script>
+    <script src="js/kontakt.js" defer></script>
   </head>
   <body>
-    <a class="skip" href="#main">Hoppa till innehållet</a>
+    <a class="skip-link" href="#main">Hoppa till innehållet</a>
     <header class="site-header">
       <div class="wrap">
         <a class="logo" href="index.html"
@@ -73,7 +73,8 @@
             <figure class="frame">
               <img
                 src="images/skylt-hangande.jpg"
-                alt="Guldsmedernas skylt i smidesjärn"/>
+                alt="Guldsmedernas skylt i smidesjärn"
+              />
             </figure>
           </div>
           <div>
@@ -166,7 +167,7 @@
         <div>
           <h3>Sidor</h3>
           <ul>
-            <li><a href="index.html">Start</a></li>
+            <li><a href="index.html">Hem</a></li>
             <li><a href="tjanster.html">Tjänster</a></li>
             <li><a href="galleri.html">Galleri</a></li>
             <li><a href="kontakt.html">Kontakta oss</a></li>
@@ -178,6 +179,11 @@
           <img
             src="images/logo-guldsmederna-transparent.png"
             alt="Guldsmederna Logo"
+            class="legal-logo"
+          />
+          <img
+            src="images/mastare-liggande-farg-transparent.png"
+            alt="Officiell logo från hantverksrådet som intygar att utövaren är mästare"
             class="legal-logo"
           />
           <p class="legal">© 2026 Guldsmederna</p>
