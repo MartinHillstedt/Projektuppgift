@@ -88,5 +88,31 @@ function showRates(data) {
       minute: "2-digit",
     });
 }
+/**
+ * Läser sparade kurser från localStorage.
+ * @returns {Object|null} Objekt med savedAt och data, eller null om inget finns
+ */
+function loadCache() {
+  try {
+    const text = localStorage.getItem(CACHE_KEY);
+    if (text === null) {
+      return null;
+    }
+    return JSON.parse(text);
+  } catch (error) {
+    return null;
+  }
+}
 
+/**
+ * Sparar kurserna i localStorage tillsammans med tidpunkten de sparades.
+ * @param {Object} data - Svaret från API:t
+ */
+function saveCache(data) {
+  localStorage.setItem(CACHE_KEY, JSON.stringify({ savedAt: Date.now(), data: data }));
+}
+// Visa kurserna när sidan laddas och försök uppdatera dem en gång i timmen.
+// Intervallet är en minut längre än cachetiden, så att de sparade kurserna hunnit bli gamla.
+updateRates();
+setInterval(updateRates, (MAX_AGE_MINUTES + 1) * 60 * 1000);
 
