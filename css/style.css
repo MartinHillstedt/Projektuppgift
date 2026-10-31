@@ -397,7 +397,31 @@ footer a {
 footer a:hover {
   color: var(--gold-lt);
 }
-
+.rates-sub {
+  font-size: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+.rates-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.rates-list strong {
+  color: var(--gold-lt);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.rates-status {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+@media (min-width: 900px) {
+  .footer-rates {
+    grid-template-columns: 1.1fr 1fr 1.3fr 0.7fr;
+  }
+}
 /*COPYRIGHTSEKTION*/
 
 .legal-bar {
@@ -611,8 +635,15 @@ dialog button:hover {
   background: rgba(217, 188, 130, 0.2);
 }
 
-/*TJÄNSTER*/
+/*KONTAKT*/
 
+.contact h2 {
+  margin: 0.6rem 0 1rem;
+}
+.contact .btn {
+  display: inline-block;
+  margin-top: 1.2rem;
+}
 .contact {
   display: grid;
   gap: 2.5rem;
