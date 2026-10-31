@@ -111,6 +111,39 @@ function loadCache() {
 function saveCache(data) {
   localStorage.setItem(CACHE_KEY, JSON.stringify({ savedAt: Date.now(), data: data }));
 }
+
+/**
+ * Visar kurserna: sparade om de är nya nog, annars hämtas nya från API:t.
+ * Går hämtningen fel visas de senast sparade kurserna, eller ett meddelande.
+ */
+async function updateRates() {
+  const cached = loadCache();
+  const maxAge = MAX_AGE_MINUTES * 60 * 1000;
+
+  // Sparade kurser som är nya nog används, utan nytt API-anrop
+  if (cached !== null && Date.now() - cached.savedAt < maxAge) {
+    showRates(cached.data);
+    return;
+  }
+
+  try {
+    const data = await fetchMetalRates();
+    saveCache(data);
+    showRates(data);
+  } catch (error) {
+    console.error("Kunde inte hämta metallkurser:", error);
+
+    if (cached !== null) {
+      showRates(cached.data);
+      statusElement.textContent += " (nya kurser kunde inte hämtas)";
+    } else {
+      statusElement.textContent = "Kurserna kan inte hämtas just nu.";
+    }
+  }
+}
+
+
+
 // Visa kurserna när sidan laddas och försök uppdatera dem en gång i timmen.
 // Intervallet är en minut längre än cachetiden, så att de sparade kurserna hunnit bli gamla.
 updateRates();
