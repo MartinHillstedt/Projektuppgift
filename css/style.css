@@ -102,13 +102,6 @@ textarea:focus-visible {
 .btn-transp:hover {
   background: rgba(255, 255, 255, 0.1);
 }
-.site-header {
-  position: relative;
-  z-index: 10;
-  background: var(--logo-bg);
-  color: #fff;
-  border-bottom: 1px solid rgba(184, 143, 69, 0.3);
-}
 .site-header .wrap {
   display: flex;
   flex-wrap: wrap;
@@ -154,11 +147,6 @@ textarea:focus-visible {
 .nav a[aria-current] {
   color: var(--gold-lt);
 }
-@media (min-width: 760px) {
-  .site-header {
-    position: sticky;
-    top: 0;
-  }
   .logo img {
     height: 72px;
   }
@@ -183,22 +171,32 @@ textarea:focus-visible {
   .nav a[aria-current] {
     border-bottom-color: var(--gold);
   }
-}
-.pagehead {
-  background: var(--ink);
-  color: #fff;
-  padding: clamp(3rem, 7vw, 5rem) 0;
-  text-align: center;
-}
-.pagehead h1 {
-  margin: 0.6rem 0 1rem;
-}
-.pagehead p {
-  max-width: 44rem;
-  margin-inline: auto;
-  color: #d6d0c2;
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
+/*HEADER*/
+.site-header {
+  position: relative;
+  z-index: 10;
+  background: var(--logo-bg);
+  color: #fff;
+  border-bottom: 1px solid rgba(184, 143, 69, 0.3);
+}
+@media (min-width: 760px) {
+  .site-header {
+    position: sticky;
+    top: 0;
+  }
+}
 /* HEROSEKTIONEN */
 
 .hero {
@@ -245,6 +243,33 @@ textarea:focus-visible {
   max-width: 46ch;
   font-size: 1.1rem;
   color: #e9e3d6;
+}
+@keyframes zoomBg {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero > img {
+    animation: none;
+  }
+  .hero .wrap {
+    animation: none;
+    opacity: 1;
+  }
 }
 
 /*FAKTASEKTIONEN*/
@@ -375,7 +400,7 @@ footer {
 }
 footer .wrap {
   display: grid;
-  gap: 1.5rem; /* Fixat: Ändrat kommatecken till punkt (1,5rem -> 1.5rem) */
+  gap: 1.5rem; 
 }
 @media (min-width: 760px) {
   footer .wrap {
@@ -475,7 +500,7 @@ footer a:hover {
 .svc div {
   padding: 1.2rem 1.4rem 1.6rem;
 }
-.svc h2 {
+.svc h3 {
   font: 600 1rem var(--sans);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -485,19 +510,9 @@ footer a:hover {
 .svc p {
   font-size: 0.97rem;
 }
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
 
 /*GALLERI*/
+
 
 .pagehead {
   background: var(--ink);
@@ -531,44 +546,6 @@ footer a:hover {
 }
 .gal a:hover img {
   opacity: 0.85;
-}
-
-.svc {
-  display: grid;
-  gap: 1.6rem;
-  grid-template-columns: 1fr;
-}
-@media (min-width: 700px) {
-  .svc {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (min-width: 1040px) {
-  .svc {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-.svc article {
-  background: #fff;
-  border: 1px solid var(--sand);
-}
-.svc img {
-  width: 100%;
-  aspect-ratio: 3/2;
-  object-fit: cover;
-}
-.svc div {
-  padding: 1.2rem 1.4rem 1.6rem;
-}
-.svc h3 {
-  font: 600 1rem var(--sans);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 0.5rem;
-}
-.svc p {
-  font-size: 0.97rem;
 }
 .gal figcaption {
   font-size: 0.85rem;
