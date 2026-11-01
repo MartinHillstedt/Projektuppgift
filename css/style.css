@@ -125,6 +125,7 @@ textarea:focus-visible {
   border: 1px solid rgba(217, 188, 130, 0.6);
   padding: 0.5rem 1rem;
   font: 600 0.85rem var(--sans);
+  font-size: 1.3rem; line-height: 1;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   cursor: pointer;
@@ -160,7 +161,7 @@ textarea:focus-visible {
   .logo img {
     height: 72px;
   }
-  }
+  
   .menu-btn {
     display: none;
   }
@@ -182,6 +183,7 @@ textarea:focus-visible {
   .nav a[aria-current] {
     border-bottom-color: var(--gold);
   }
+}
 .visually-hidden {
   position: absolute;
   width: 1px;
