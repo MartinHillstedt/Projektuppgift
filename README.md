@@ -6,7 +6,7 @@ Webbplatsen presenterar verksamheten, tjänsterna och hantverket, och gör det e
  
 Webbplatsen är byggd med HTML, CSS och JavaScript.
  
-**Publicerad på:** guldsmederna.netlify.app
+**Publicerad på:** [guldsmederna.netlify.app](https://guldsmederna.netlify.app)
  
 ## Sidor
  
