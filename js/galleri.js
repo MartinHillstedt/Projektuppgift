@@ -1,5 +1,9 @@
-"use strict"
+"use strict";
+/*
+ * Galleri: filtrera bilder efter kategori och visa bilder större i en bildvisare.
+ */
 
+//Hämta från DOM
 const figures = document.querySelectorAll(".gal figure");
 const filterButtons = document.querySelectorAll(".flt button");
 const lightbox = document.querySelector("#lightbox");
@@ -9,11 +13,14 @@ const prevButton = document.querySelector("#lb-prev");
 const nextButton = document.querySelector("#lb-next");
 const closeButton = document.querySelector("#lb-close");
 
-
+//bilderna som syns just nu beroende på filter och vilken bild som visas
 let shownFigures = [];
 let currentIndex = 0;
 
-
+/**
+ * Visar bara bilderna som tillhör vald kategori.
+ * @param {string} category - Kategorin, eller "alla" för att visa alla
+ */
 function filterGallery(category) {
   figures.forEach(function (figure) {
     if (category === "alla" || figure.dataset.cat === category) {
@@ -24,9 +31,12 @@ function filterGallery(category) {
   });
 }
 
-
-function showImage(index) {
-  
+/**
+ * Visar en bild i bildvisaren.
+ * @param {number} index - Plats i listan shownFigures
+ */
+ function showImage(index) {
+  // Efter sista bilden kommer den första, och tvärtom
   if (index < 0) {
     index = shownFigures.length - 1;
   }
@@ -44,7 +54,10 @@ function showImage(index) {
   lightboxCaption.textContent = figure.querySelector("figcaption").textContent;
 }
 
-
+/**
+ * Öppnar bildvisaren med en vald bild.
+ * @param {HTMLElement} figure - Bilden (figure-elementet) som klickades
+ */
 function openLightbox(figure) {
   
   shownFigures = [];
@@ -58,7 +71,7 @@ function openLightbox(figure) {
   lightbox.showModal();
 }
 
-
+//Filterknappar 
 filterButtons.forEach(function (button) {
   button.addEventListener("click", function () {
     filterGallery(button.dataset.cat);
@@ -70,7 +83,7 @@ filterButtons.forEach(function (button) {
   });
 });
 
-
+//Öppnar bildvisaren istället för att gå till filen
 figures.forEach(function (figure) {
   figure.querySelector("a").addEventListener("click", function (event) {
     event.preventDefault();
@@ -78,7 +91,7 @@ figures.forEach(function (figure) {
   });
 });
 
-
+//Knapparna
 prevButton.addEventListener("click", function () {
   showImage(currentIndex - 1);
 });

@@ -1,6 +1,6 @@
-"use strict"
+"use strict";
 
-// Hämta element från DOM
+//Hämta från DOM
 const contactForm = document.querySelector("#kontaktformular");
 const statusMessage = document.querySelector("#formular-status");
 const nameInput = document.querySelector("#namn");
@@ -9,10 +9,14 @@ const phoneInput = document.querySelector("#telefon");
 const subjectSelect = document.querySelector("#arende");
 const messageInput = document.querySelector("#meddelande");
 
-
+//Alla fält i en lista så man kan loopa dom
 const fields = [nameInput, emailInput, phoneInput, subjectSelect, messageInput];
 
-
+/**
+ * Visar ett felmeddelande under ett fält.
+ * @param {HTMLElement} field - Fältet som är fel ifyllt
+ * @param {string} message - Meddelandet som ska visas
+ */
 function showError(field, message) {
   
   const errorElement = document.querySelector("#" + field.id + "-fel");
@@ -20,19 +24,25 @@ function showError(field, message) {
   field.setAttribute("aria-invalid", "true");
 }
 
-
+/**
+ * Tar bort felmeddelandet för ett fält.
+ * @param {HTMLElement} field - Fältet vars felmeddelande ska tas bort
+ */
 function clearError(field) {
   const errorElement = document.querySelector("#" + field.id + "-fel");
   errorElement.textContent = "";
   field.removeAttribute("aria-invalid");
 }
 
-
+/**
+ * Kontrollerar alla fält i formuläret.
+ * @returns {boolean} true om allt är korrekt ifyllt, annars false
+ */
 function validateForm() {
   let isValid = true;
   let firstInvalidField = null;
 
-  
+  // Sparar att ett fält är fel och visar meddelandet
   function markInvalid(field, message) {
     showError(field, message);
     isValid = false;
@@ -41,12 +51,12 @@ function validateForm() {
     }
   }
 
-  
+  // Ta bort gamla felmeddelanden
   fields.forEach(function (field) {
     clearError(field);
   });
 
-  
+  //Kontrollerar att allt är ifyllt enligt regler för varje fält annars felmeddelande.
   if (nameInput.value.trim() === "") {
     markInvalid(nameInput, "Skriv ditt namn.");
   }
@@ -84,7 +94,7 @@ function validateForm() {
   return isValid;
 }
 
-
+//Stoppar sidan från att laddsa om när formuläret skickas
 contactForm.addEventListener("submit", function (event) {
   
   event.preventDefault();
@@ -97,7 +107,7 @@ contactForm.addEventListener("submit", function (event) {
   }
 });
 
-
+//Felmeddelandet tas bort när man börjar skriva i fältet
 fields.forEach(function (field) {
   field.addEventListener("input", function () {
     clearError(field);
