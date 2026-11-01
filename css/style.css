@@ -15,6 +15,12 @@
   box-sizing: border-box;
   margin: 0;
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+} 
 body {
   font: 17px/1.7 var(--sans);
   color: var(--text);
@@ -150,6 +156,11 @@ textarea:focus-visible {
   .logo img {
     height: 72px;
   }
+  @media (min-width: 760px) {
+  .logo img {
+    height: 72px;
+  }
+  }
   .menu-btn {
     display: none;
   }
@@ -215,6 +226,8 @@ textarea:focus-visible {
   height: 100%;
   object-fit: cover;
   object-position: 60% 40%;
+  transform-origin: 60% 40%;
+  animation: zoomBg 9s ease-out forwards;
 }
 .hero::after {
   content: "";
@@ -226,6 +239,8 @@ textarea:focus-visible {
     rgba(10, 13, 18, 0.4) 55%,
     rgba(10, 13, 18, 0.2)
   );
+  opacity: 0;
+  animation: fadeUp 1.4s ease-out 0.5s forwards;
 }
 .hero .wrap {
   position: relative;
